@@ -1,5 +1,8 @@
 # Advent of Code 2019
 
+![HitCount](http://hits.dwyl.io/mrrobb/advent-of-code-2019.svg)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MrRobb/advent-of-code-2019/blob/master/LICENSE)
+
 |       | Problem                                          | Solution                                                                              |
 |-------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs) |
