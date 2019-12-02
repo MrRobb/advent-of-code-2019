@@ -1,9 +1,13 @@
 # Advent of Code 2019
 
+<p align="center">
+
 |       | Problem                                          | Solution                                                                              |
 |-------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs) |
 | Day 2 | [Problem 2](https://adventofcode.com/2019/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day2.rs) |
+
+</p>
 
 ## Install Rust
 
