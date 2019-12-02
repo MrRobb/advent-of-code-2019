@@ -36,12 +36,12 @@ fn find_noun_verb(code: Vec<u64>, value: u64) -> Option<(u64, u64)> {
 	None
 }
 
-fn main() {
+pub fn main() {
 	let input = read_to_string("input/day2/input1.txt").unwrap();
 	let code: Vec<u64> = input.split(',').map(|n| n.parse().unwrap()).collect();
-	println!("PART 1: position 0 -> {}", calculator(code.clone())[0]);
+	println!("PART 1 -> position 0: {}", calculator(code.clone())[0]);
 	let nv = find_noun_verb(code.clone(), 19_690_720).unwrap();
-	println!("PART 2: position 0 -> {}", 100 * nv.0 + nv.1);
+	println!("PART 2 -> noun: {}, verb: {}, combined: {}", nv.0, nv.1, 100 * nv.0 + nv.1);
 }
 
 #[cfg(test)]

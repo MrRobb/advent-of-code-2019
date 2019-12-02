@@ -14,7 +14,7 @@ fn recursive_fuel(mass: u64) -> u64 {
 	}
 }
 
-fn main() {
+pub fn main() {
 	let input = read_to_string("input/day1/input1.txt").unwrap();
 
 	let mut fuel_sum = 0;
@@ -26,8 +26,8 @@ fn main() {
 		recursive_fuel_sum += recursive_fuel(num);
 	}
 
-	println!("PART 1: necessary fuel: {}", fuel_sum);
-	println!("PART 2: recursive fuel: {}", recursive_fuel_sum);
+	println!("PART 1 -> necessary fuel: {}", fuel_sum);
+	println!("PART 2 -> recursive fuel: {}", recursive_fuel_sum);
 }
 
 #[cfg(test)]
