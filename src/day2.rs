@@ -41,7 +41,8 @@ pub fn main() {
 	let code: Vec<u64> = input.split(',').map(|n| n.parse().unwrap()).collect();
 	println!("PART 1 -> position 0: {}", calculator(code.clone())[0]);
 	let nv = find_noun_verb(code.clone(), 19_690_720).unwrap();
-	println!("PART 2 -> noun: {}, verb: {}, combined: {}", nv.0, nv.1, 100 * nv.0 + nv.1);
+	let combined = 100 * nv.0 + nv.1;
+	println!("PART 2 -> noun: {}, verb: {}, combined: {}", nv.0, nv.1, combined);
 }
 
 #[cfg(test)]
