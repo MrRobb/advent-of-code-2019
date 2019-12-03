@@ -3,10 +3,11 @@
 ![HitCount](http://hits.dwyl.io/mrrobb/advent-of-code-2019.svg)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MrRobb/advent-of-code-2019/blob/master/LICENSE)
 
-|       | Problem                                          | Solution                                                                              |
-|-------|--------------------------------------------------|---------------------------------------------------------------------------------------|
-| Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs) |
-| Day 2 | [Problem 2](https://adventofcode.com/2019/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day2.rs) |
+|       | Problem                                          | Solution                                                                         | Time execution   |
+|-------|--------------------------------------------------|----------------------------------------------------------------------------------|------------------|
+| Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs) | 26.7 ms ±,1.8 ms |
+| Day 2 | [Problem 2](https://adventofcode.com/2019/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day2.rs) | 28.7 ms ±,1.2 ms |
+| Day 3 | [Problem 3](https://adventofcode.com/2019/day/3) | [day3.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day3.rs) | 27.7 ms ±,1.0 ms |
 
 ## Install Rust
 
