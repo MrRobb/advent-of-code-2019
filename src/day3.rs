@@ -135,8 +135,10 @@ fn input_to_instructions(input: String) -> Vec<Vec<Instruction>> {
 pub fn main() {
 	let input = read_to_string("input/day3/input1.txt").unwrap();
 	let ins = input_to_instructions(input);
-	println!("{:?}", min_manhattan_intersection(&ins[0], &ins[1]));
-	println!("{:?}", min_steps_intersection(&ins[0], &ins[1]));
+	let inter1 = min_manhattan_intersection(&ins[0], &ins[1]);
+	println!("PART 1 -> intersection: {:?}, distance: {:?}", inter1.0, inter1.1);
+	let inter2 = min_steps_intersection(&ins[0], &ins[1]);
+	println!("PART 2 -> intersection: {:?}, steps: {:?}", inter2.0, inter2.1);
 }
 
 #[cfg(test)]
