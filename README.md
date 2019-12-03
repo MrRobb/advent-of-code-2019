@@ -5,9 +5,9 @@
 
 |       | Problem                                          | Solution                                                                         | Time execution  |
 |-------|--------------------------------------------------|----------------------------------------------------------------------------------|-----------------|
-| Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs) | 2.8 ms ±,0.5 ms |
-| Day 2 | [Problem 2](https://adventofcode.com/2019/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day2.rs) | 5.3 ms ±,0.6 ms |
-| Day 3 | [Problem 3](https://adventofcode.com/2019/day/3) | [day3.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day3.rs) | 4.5 ms ±,0.5 ms |
+| Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs) | 2.7 ms ±,0.5 ms |
+| Day 2 | [Problem 2](https://adventofcode.com/2019/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day2.rs) | 5.2 ms ±,0.5 ms |
+| Day 3 | [Problem 3](https://adventofcode.com/2019/day/3) | [day3.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day3.rs) | 4.5 ms ±,0.6 ms |
 
 ## Install Rust
 
@@ -46,4 +46,20 @@ cargo run
 
 ```sh
 cargo run --bin day1
+```
+
+#### Benchmarks
+
+```sh
+Benchmark #1: target/release/day1
+  Time (mean ± σ):       2.7 ms ±   0.5 ms    [User: 0.9 ms, System: 0.7 ms]
+  Range (min … max):     2.2 ms …   6.6 ms    450 runs
+
+Benchmark #2: target/release/day2
+  Time (mean ± σ):       5.2 ms ±   0.5 ms    [User: 3.2 ms, System: 0.8 ms]
+  Range (min … max):     4.4 ms …   7.0 ms    322 runs
+
+Benchmark #3: target/release/day3
+  Time (mean ± σ):       4.5 ms ±   0.6 ms    [User: 2.5 ms, System: 0.8 ms]
+  Range (min … max):     3.9 ms …   7.5 ms    305 runs
 ```
