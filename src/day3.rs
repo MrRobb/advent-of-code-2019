@@ -14,11 +14,11 @@ struct Instruction {
 	distance: i64,
 }
 
-fn manhattan_distance(a: &Point, b: &Point) -> u64 {
+fn manhattan(a: &Point, b: &Point) -> u64 {
 	(a.0 - b.0).abs() as u64 + (a.1 - b.1).abs() as u64
 }
 
-fn generate_ranges(path: &Vec<Instruction>) -> Vec<Point> {
+fn generate_ranges(path: &[Instruction]) -> Vec<Point> {
 	let mut loc: Point = (0, 0);
 	let mut ranges = vec![loc];
 	for ins in path {
@@ -65,45 +65,46 @@ fn overlap(p0: &Point, p1: &Point, p2: &Point, p3: &Point) -> Option<Point> {
 	}
 }
 
-fn min_manhattan_intersection(path1: &Vec<Instruction>, path2: &Vec<Instruction>) -> (Point, u64) {
+fn min_manhattan_intersection(path1: &[Instruction], path2: &[Instruction]) -> (Point, u64) {
 	let ranges1 = generate_ranges(path1);
 	let ranges2 = generate_ranges(path2);
 	let mut inters = vec![];
 
 	for (p0, p1) in ranges1.iter().zip(ranges1[1..].iter()) {
 		for (p2, p3) in ranges2.iter().zip(ranges2[1..].iter()) {
-			let o = overlap(p0, p1, p2, p3);
-			if o.is_some() && o != Some((0, 0)) {
-				inters.push(o.unwrap())
+			if let Some(o) = overlap(p0, p1, p2, p3) {
+				if o != (0, 0) {
+					inters.push(o);
+				}
 			}
 		}
 	}
 
 	let min = *inters
 		.iter()
-		.min_by(|inter1, inter2| manhattan_distance(&(0, 0), inter1).cmp(&manhattan_distance(&(0, 0), inter2)))
+		.min_by(|inter1, inter2| manhattan(&(0, 0), inter1).cmp(&manhattan(&(0, 0), inter2)))
 		.unwrap();
-	(min, manhattan_distance(&(0, 0), &min))
+	(min, manhattan(&(0, 0), &min))
 }
 
-fn min_steps_intersection(path1: &Vec<Instruction>, path2: &Vec<Instruction>) -> (Point, u64) {
+fn min_steps_intersection(path1: &[Instruction], path2: &[Instruction]) -> (Point, u64) {
 	let ranges1 = generate_ranges(path1);
 	let ranges2 = generate_ranges(path2);
 	let mut inters = vec![];
 
 	let mut steps_a = 0;
 	for (p0, p1) in ranges1.iter().zip(ranges1[1..].iter()) {
-		steps_a += manhattan_distance(p0, p1);
+		steps_a += manhattan(p0, p1);
 
 		let mut steps_b = 0;
 		for (p2, p3) in ranges2.iter().zip(ranges2[1..].iter()) {
-			steps_b += manhattan_distance(p2, p3);
+			steps_b += manhattan(p2, p3);
 
-			let o = overlap(p0, p1, p2, p3);
-			if o.is_some() && o != Some((0, 0)) {
-				let dist =
-					steps_a + steps_b - manhattan_distance(p1, &o.unwrap()) - manhattan_distance(p3, &o.unwrap());
-				inters.push((o.unwrap(), dist))
+			if let Some(o) = overlap(p0, p1, p2, p3) {
+				if o != (0, 0) {
+					let dist = steps_a + steps_b - manhattan(p1, &o) - manhattan(p3, &o);
+					inters.push((o, dist))
+				}
 			}
 		}
 	}
