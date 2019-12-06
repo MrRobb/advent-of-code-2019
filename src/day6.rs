@@ -2,12 +2,12 @@ extern crate petgraph;
 
 use petgraph::algo::astar;
 use petgraph::graphmap::GraphMap;
+use petgraph::visit::Dfs;
+use petgraph::visit::Walker;
 use petgraph::Directed;
 use petgraph::EdgeType;
 use petgraph::Undirected;
 use std::fs::read_to_string;
-use petgraph::visit::Walker;
-use petgraph::visit::Dfs;
 
 fn build_graph<D: EdgeType>(edges: Vec<&str>) -> GraphMap<&str, (), D> {
 	let mut graph = GraphMap::<_, (), D>::new();
@@ -20,7 +20,8 @@ fn build_graph<D: EdgeType>(edges: Vec<&str>) -> GraphMap<&str, (), D> {
 
 fn calculate_indirect(edges: Vec<&str>) -> usize {
 	let graph = build_graph::<Directed>(edges);
-	graph.nodes()
+	graph
+		.nodes()
 		.map(|node| Dfs::new(&graph, node).iter(&graph).count() - 1)
 		.sum()
 }
