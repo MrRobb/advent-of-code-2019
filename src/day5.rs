@@ -1,5 +1,9 @@
 use std::fs::read_to_string;
 
+////////////////////////////////////////
+/// OPERATION
+////////////////////////////////////////
+
 #[derive(PartialEq)]
 enum Operation {
 	Add = 1,
@@ -46,6 +50,10 @@ impl From<i64> for Operation {
 	}
 }
 
+////////////////////////////////////////
+/// PARAMETER MODE
+////////////////////////////////////////
+
 #[derive(Debug)]
 enum ParameterMode {
 	Position = 0,
@@ -70,6 +78,10 @@ impl From<u32> for ParameterMode {
 		}
 	}
 }
+
+////////////////////////////////////////
+/// INSTRUCTION
+////////////////////////////////////////
 
 struct Instruction {
 	opcode: Operation,
@@ -153,6 +165,10 @@ impl Instruction {
 	}
 }
 
+////////////////////////////////////////
+/// CALCULATOR
+////////////////////////////////////////
+
 fn calculator(mut code: Vec<i64>, mut input: Vec<i64>) -> (Vec<i64>, Vec<i64>) {
 	let mut i = 0;
 	let mut output = Vec::new();
@@ -166,6 +182,10 @@ fn calculator(mut code: Vec<i64>, mut input: Vec<i64>) -> (Vec<i64>, Vec<i64>) {
 	(code, output)
 }
 
+////////////////////////////////////////
+/// MAIN
+////////////////////////////////////////
+
 pub fn main() {
 	let code_str = read_to_string("input/day5/input1.txt").unwrap();
 	let code: Vec<i64> = code_str.split(',').map(|n| n.parse().unwrap()).collect();
@@ -178,6 +198,10 @@ pub fn main() {
 	let (_, output) = calculator(code.clone(), input.clone());
 	println!("PART 2 -> Input: {:?}, Output: {:?}", input, output);
 }
+
+////////////////////////////////////////
+/// TESTS
+////////////////////////////////////////
 
 #[cfg(test)]
 mod tests {
