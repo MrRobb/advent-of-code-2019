@@ -52,7 +52,7 @@ cargo run --bin day1
 
 #### Benchmarks
 
-```sh
+```
 Benchmark #1: target/release/day1
   Time (mean ± σ):       2.7 ms ±   0.5 ms    [User: 0.9 ms, System: 0.7 ms]
   Range (min … max):     2.2 ms …   6.6 ms    450 runs
