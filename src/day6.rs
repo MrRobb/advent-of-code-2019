@@ -40,17 +40,11 @@ pub fn main() {
 	let input = read_to_string("input/day6/input1.txt").unwrap();
 	let edges: Vec<_> = input.lines().collect();
 
-	let direct = edges.len();
 	let total = calculate_indirect(edges.clone());
-	println!(
-		"PART 1 -> Direct: {}, Indirect: {}, Total: {}",
-		direct,
-		total - direct,
-		total
-	);
+	println!("PART 1 -> Total orbits: {}", total);
 
 	let path = calculate_path(edges.clone());
-	println!("PART 2 -> Path size: {}", path);
+	println!("PART 2 -> Orbit changes: {}", path);
 }
 
 ////////////////////////////////////////
