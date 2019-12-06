@@ -1,18 +1,18 @@
 extern crate petgraph;
 
 use petgraph::algo::astar;
-use petgraph::algo::has_path_connecting;
 use petgraph::graphmap::GraphMap;
 use petgraph::Directed;
 use petgraph::EdgeType;
 use petgraph::Undirected;
 use std::fs::read_to_string;
+use petgraph::visit::Walker;
+use petgraph::visit::Dfs;
 
 fn build_graph<D: EdgeType>(edges: Vec<&str>) -> GraphMap<&str, (), D> {
 	let mut graph = GraphMap::<_, (), D>::new();
 	for edge in edges {
 		let from_to: Vec<_> = edge.split(')').collect();
-		assert!(from_to.len() == 2);
 		graph.add_edge(from_to[0], from_to[1], ());
 	}
 	graph
@@ -20,16 +20,9 @@ fn build_graph<D: EdgeType>(edges: Vec<&str>) -> GraphMap<&str, (), D> {
 
 fn calculate_indirect(edges: Vec<&str>) -> usize {
 	let graph = build_graph::<Directed>(edges);
-	let mut sum = 0;
-	for node_a in graph.nodes() {
-		for node_b in graph.nodes() {
-			if node_a != node_b && has_path_connecting(&graph, node_a, node_b, None) {
-				sum += 1;
-			}
-		}
-		println!("SUM: {}", sum);
-	}
-	sum
+	graph.nodes()
+		.map(|node| Dfs::new(&graph, node).iter(&graph).count() - 1)
+		.sum()
 }
 
 fn calculate_path(edges: Vec<&str>) -> usize {
