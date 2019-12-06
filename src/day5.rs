@@ -159,7 +159,7 @@ impl Instruction {
 				let out = memory[*i + 3] as usize;
 				memory[out] = if x1 == x2 { 1 } else { 0 };
 			},
-			Operation::Halt => unreachable!(),
+			Operation::Halt => {},
 		}
 		*i = new_i;
 	}
