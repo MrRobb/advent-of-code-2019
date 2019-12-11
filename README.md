@@ -3,16 +3,17 @@
 ![HitCount](http://hits.dwyl.io/mrrobb/advent-of-code-2019.svg)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MrRobb/advent-of-code-2019/blob/master/LICENSE)
 
-|       | Problem                                          | Solution                                                                              | Time execution   | Finished |
-|-------|--------------------------------------------------|---------------------------------------------------------------------------------------|------------------|----------|
-| Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs?ts=4) | 2.7 ms ± 0.5 ms  | ✓        |
-| Day 2 | [Problem 2](https://adventofcode.com/2019/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day2.rs?ts=4) | 5.2 ms ± 0.5 ms  | ✓        |
-| Day 3 | [Problem 3](https://adventofcode.com/2019/day/3) | [day3.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day3.rs?ts=4) | 4.5 ms ± 0.6 ms  | ✓        |
-| Day 4 | [Problem 4](https://adventofcode.com/2019/day/4) | [day4.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day4.rs?ts=4) | 2.7 ms ± 0.4 ms  | ✓        |
-| Day 5 | [Problem 5](https://adventofcode.com/2019/day/5) | [day5.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day5.rs?ts=4) | 2.9 ms ± 0.6 ms  | ✓        |
-| Day 6 | [Problem 6](https://adventofcode.com/2019/day/6) | [day6.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day6.rs?ts=4) | 5.8 ms ± 0.4 ms  | ✓        |
-| Day 7 | [Problem 7](https://adventofcode.com/2019/day/7) | [day7.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day7.rs?ts=4) | 13.2 ms ± 0.6 ms | ✓        |
-| Day 8 | [Problem 8](https://adventofcode.com/2019/day/8) | [day8.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day8.rs?ts=4) | 2.8 ms ± 0.5 ms  | ✓        |
+|       | Problem                                          | Solution                                                                              | Time execution    | Finished |
+|-------|--------------------------------------------------|---------------------------------------------------------------------------------------|-------------------|----------|
+| Day 1 | [Problem 1](https://adventofcode.com/2019/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day1.rs?ts=4) | 2.7 ms ± 0.5 ms   | ✓        |
+| Day 2 | [Problem 2](https://adventofcode.com/2019/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day2.rs?ts=4) | 5.2 ms ± 0.5 ms   | ✓        |
+| Day 3 | [Problem 3](https://adventofcode.com/2019/day/3) | [day3.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day3.rs?ts=4) | 4.5 ms ± 0.6 ms   | ✓        |
+| Day 4 | [Problem 4](https://adventofcode.com/2019/day/4) | [day4.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day4.rs?ts=4) | 2.7 ms ± 0.4 ms   | ✓        |
+| Day 5 | [Problem 5](https://adventofcode.com/2019/day/5) | [day5.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day5.rs?ts=4) | 2.9 ms ± 0.6 ms   | ✓        |
+| Day 6 | [Problem 6](https://adventofcode.com/2019/day/6) | [day6.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day6.rs?ts=4) | 5.8 ms ± 0.4 ms   | ✓        |
+| Day 7 | [Problem 7](https://adventofcode.com/2019/day/7) | [day7.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day7.rs?ts=4) | 13.2 ms ± 0.6 ms  | ✓        |
+| Day 8 | [Problem 8](https://adventofcode.com/2019/day/8) | [day8.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day8.rs?ts=4) | 2.8 ms ± 0.5 ms   | ✓        |
+| Day 9 | [Problem 9](https://adventofcode.com/2019/day/9) | [day9.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day9.rs?ts=4) | 216.0 ms ± 3.8 ms | ✓        |
 
 ## Install Rust
 
@@ -87,4 +88,8 @@ Benchmark #7: target/release/day7
 Benchmark #8: target/release/day8
   Time (mean ± σ):       2.8 ms ±   0.5 ms    [User: 1.0 ms, System: 0.7 ms]
   Range (min … max):     2.3 ms …   5.2 ms    489 runs
+
+Benchmark #9: target/release/day9
+  Time (mean ± σ):     216.0 ms ±   3.8 ms    [User: 212.0 ms, System: 1.8 ms]
+  Range (min … max):   210.0 ms … 229.1 ms    100 runs
 ```
