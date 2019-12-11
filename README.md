@@ -12,6 +12,7 @@
 | Day 5 | [Problem 5](https://adventofcode.com/2019/day/5) | [day5.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day5.rs?ts=4) | 2.9 ms ± 0.6 ms  | ✓        |
 | Day 6 | [Problem 6](https://adventofcode.com/2019/day/6) | [day6.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day6.rs?ts=4) | 5.8 ms ± 0.4 ms  | ✓        |
 | Day 7 | [Problem 7](https://adventofcode.com/2019/day/7) | [day7.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day7.rs?ts=4) | 13.2 ms ± 0.6 ms | ✓        |
+| Day 8 | [Problem 8](https://adventofcode.com/2019/day/8) | [day8.rs](https://github.com/MrRobb/advent-of-code-2019/blob/master/src/day8.rs?ts=4) | 2.8 ms ± 0.5 ms  | ✓        |
 
 ## Install Rust
 
@@ -82,4 +83,8 @@ Benchmark #6: target/release/day6
 Benchmark #7: target/release/day7
   Time (mean ± σ):      13.2 ms ±   0.6 ms    [User: 10.9 ms, System: 1.0 ms]
   Range (min … max):    12.3 ms …  15.0 ms    180 runs
+
+Benchmark #8: target/release/day8
+  Time (mean ± σ):       2.8 ms ±   0.5 ms    [User: 1.0 ms, System: 0.7 ms]
+  Range (min … max):     2.3 ms …   5.2 ms    489 runs
 ```
