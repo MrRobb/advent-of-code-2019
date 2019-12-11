@@ -220,7 +220,7 @@ impl Process {
 fn get_max_signal(code: &Vec<i64>) -> (i64, Vec<i64>) {
 	(0..5)
 		.permutations(5)
-		.filter_map(|phases| {
+		.map(|phases| {
 			let mut result = 0;
 			for phase in &phases {
 				let mut process = Process::new(code.clone());
@@ -228,9 +228,9 @@ fn get_max_signal(code: &Vec<i64>) -> (i64, Vec<i64>) {
 				process.run();
 				result = process.output[0];
 			}
-			Some((result, phases))
+			(result, phases)
 		})
-		.max_by_key(|v| v.0)
+		.max()
 		.unwrap()
 }
 
@@ -241,7 +241,7 @@ fn get_max_signal(code: &Vec<i64>) -> (i64, Vec<i64>) {
 fn get_max_signal_with_feedback(code: &Vec<i64>) -> (i64, Vec<i64>) {
 	(5..10)
 		.permutations(5)
-		.filter_map(|phases| {
+		.map(|phases| {
 			let mut amplifiers: Vec<_> = phases
 				.iter()
 				.map(|phase| {
@@ -252,19 +252,17 @@ fn get_max_signal_with_feedback(code: &Vec<i64>) -> (i64, Vec<i64>) {
 				.collect();
 
 			let mut result = 0;
-
 			loop {
-				for (_, process) in amplifiers.iter_mut().enumerate() {
+				for process in amplifiers.iter_mut() {
 					process.input.push(result);
-					let exitcode = process.run();
-					if exitcode == ExitCode::Halt {
-						return Some((result, phases));
+					if process.run() == ExitCode::Halt {
+						return (result, phases);
 					}
 					result = process.output.pop().unwrap();
 				}
 			}
 		})
-		.max_by_key(|v| v.0)
+		.max()
 		.unwrap()
 }
 
@@ -275,10 +273,10 @@ fn get_max_signal_with_feedback(code: &Vec<i64>) -> (i64, Vec<i64>) {
 pub fn main() {
 	let code_str = read_to_string("input/day7/input1.txt").unwrap();
 	let code: Vec<i64> = code_str.split(',').map(|n| n.parse().unwrap()).collect();
-	let res = get_max_signal(&code);
-	println!("PART 1 -> Max thruster signal {} (phase: {:?})", res.0, res.1);
-	let res = get_max_signal_with_feedback(&code);
-	println!("PART 2 -> Max thruster signal {} (phase: {:?})", res.0, res.1);
+	let (signal, phases) = get_max_signal(&code);
+	println!("PART 1 -> Max thruster signal {} (phase: {:?})", signal, phases);
+	let (signal, phases) = get_max_signal_with_feedback(&code);
+	println!("PART 2 -> Max thruster signal {} (phase: {:?})", signal, phases);
 }
 
 ////////////////////////////////////////
